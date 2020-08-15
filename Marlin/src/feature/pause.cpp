@@ -271,6 +271,7 @@ bool load_filament(const float &slow_load_length/*=0*/, const float &fast_load_l
     } while (TERN0(HAS_LCD_MENU, show_lcd && pause_menu_response == PAUSE_RESPONSE_EXTRUDE_MORE));
 
   #endif
+  TERN_(HOST_PROMPT_SUPPORT, host_action_prompt_end());
 
   return true;
 }
@@ -581,6 +582,9 @@ void resume_print(const float &slow_load_length/*=0*/, const float &fast_load_le
 
   TERN_(HAS_LCD_MENU, lcd_pause_show_message(PAUSE_MESSAGE_RESUME));
 
+  // Check Temperature before moving hotend
+  ensure_safe_temperature();
+
   // Retract to prevent oozing
   unscaled_e_move(-(PAUSE_PARK_RETRACT_LENGTH), feedRate_t(PAUSE_PARK_RETRACT_FEEDRATE));
 
@@ -592,8 +596,6 @@ void resume_print(const float &slow_load_length/*=0*/, const float &fast_load_le
 
   // Unretract
   unscaled_e_move(PAUSE_PARK_RETRACT_LENGTH, feedRate_t(PAUSE_PARK_RETRACT_FEEDRATE));
-
-  ensure_safe_temperature();
 
   // Intelligent resuming
   #if ENABLED(FWRETRACT)
