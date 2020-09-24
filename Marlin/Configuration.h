@@ -491,14 +491,15 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  29.72,  29.72 }
-    #define DEFAULT_Ki_LIST {   3.21,   3.21 }
-    #define DEFAULT_Kd_LIST { 68.78, 68.78 }
+    #define DEFAULT_Kp_LIST {  35.85,  35.85 }
+    #define DEFAULT_Ki_LIST {   4.66,   4.66 }
+    #define DEFAULT_Kd_LIST { 69.00, 69.00 }
   #else
   //Creality Ender 5 Plus with Micro Swiss Hot-End
-  #define  DEFAULT_Kp 29.72
-  #define  DEFAULT_Ki 3.21
-  #define  DEFAULT_Kd 68.78
+  #define DEFAULT_Kp 35.85
+  #define DEFAULT_Ki 4.66
+  #define DEFAULT_Kd 69.00
+
   #endif
 #endif // PIDTEMP
 
@@ -519,7 +520,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -535,17 +536,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
-  //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
-
-  //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
-  //from pidautotune
-  //#define DEFAULT_bedKp 97.1
-  //#define DEFAULT_bedKi 1.41
-  //#define DEFAULT_bedKd 1675.16
+  //Ender 5 Plus Default Bed
+  #define DEFAULT_bedKp 60.69
+  #define DEFAULT_bedKi 11.77
+  #define DEFAULT_bedKd 208.59
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
