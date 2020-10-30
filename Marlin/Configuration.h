@@ -501,14 +501,20 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {  35.85,  35.85 }
-    #define DEFAULT_Ki_LIST {   4.66,   4.66 }
-    #define DEFAULT_Kd_LIST { 69.00, 69.00 }
+    #define DEFAULT_Kp_LIST {  21.77,  21.77 }
+    #define DEFAULT_Ki_LIST {   2.23,   2.23 }
+    #define DEFAULT_Kd_LIST { 53.26, 52.26 }
   #else
   //Creality Ender 5 Plus with Micro Swiss Hot-End
-  #define DEFAULT_Kp 35.85
-  #define DEFAULT_Ki 4.66
-  #define DEFAULT_Kd 69.00
+  //#define DEFAULT_Kp 35.85
+  //#define DEFAULT_Ki 4.66
+  //#define DEFAULT_Kd 69.00
+
+  //Creality Ender 5 Plus HeroMe Gen 5 with Micro Swiss Hot-End
+  #define DEFAULT_Kp 21.77
+  #define DEFAULT_Ki 2.23
+  #define DEFAULT_Kd 53.26
+  
 
   #endif
 #endif // PIDTEMP
@@ -993,7 +999,12 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -45, -7, -1.910 }
+
+// Default Creality Hot End Assembly
+//#define NOZZLE_TO_PROBE_OFFSET { -45, -7, -2.003 }
+
+// HeroMe Gen 5 with Dual 5015 fans
+#define NOZZLE_TO_PROBE_OFFSET { -55, -13, -1.170 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
