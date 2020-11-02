@@ -774,7 +774,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 100, 5000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1004,7 +1004,7 @@
 //#define NOZZLE_TO_PROBE_OFFSET { -45, -7, -2.003 }
 
 // HeroMe Gen 5 with Dual 5015 fans
-#define NOZZLE_TO_PROBE_OFFSET { -55, -13, -1.170 }
+#define NOZZLE_TO_PROBE_OFFSET { -55, -13, -1.100 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
