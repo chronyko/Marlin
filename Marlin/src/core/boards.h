@@ -335,6 +335,7 @@
 #define BOARD_FLY_MINI                4042  // FLY MINI (STM32F103RCT6)
 #define BOARD_FLSUN_HISPEED           4043  // FLSUN HiSpeedV1 (STM32F103VET6)
 #define BOARD_BEAST                   4044  // STM32F103RET6 Libmaple-based controller
+#define BOARD_BTT_SKR_CR6             4045  // BigTreeTech SKR CR6 v1.0 (STM32F103RE)
 
 //
 // ARM Cortex-M4F
@@ -367,6 +368,7 @@
 #define BOARD_FLYF407ZG               4217  // FLYF407ZG board (STM32F407ZG)
 #define BOARD_MKS_ROBIN2              4218  // MKS_ROBIN2 (STM32F407ZE)
 #define BOARD_MKS_ROBIN_PRO_V2        4219  // MKS Robin Pro V2 (STM32F407VE)
+#define BOARD_MKS_ROBIN_NANO_V3       4220  // MKS Robin Nano V3 (STM32F407VG)
 
 //
 // ARM Cortex M7
